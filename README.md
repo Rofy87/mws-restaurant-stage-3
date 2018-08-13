@@ -8,8 +8,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Install GraphicsMagick liabray in order to use gulp to resize images if needed
-Clone this repo [mws-restaurant-stage-2](https://github.com/udacity/mws-restaurant-stage-2).
+1. Install GraphicsMagick liabray in order to use gulp to resize images if needed
+2. Clone this repo [mws-restaurant-stage-2](https://github.com/udacity/mws-restaurant-stage-2).
 
 
 ### Installing
