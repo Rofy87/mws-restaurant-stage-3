@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Normalize.css for better cross-browser consistency -->
+  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+  <!-- Main CSS file -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="../../css/styles.css" inline>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#6f6f71"/>
+  <meta charset="utf-8">
+  <title>Restaurant Info</title>
+</head>
+
+<body class="inside">
+<!-- Beginning header -->
+  <header>
+    <!-- Beginning nav -->
+    <!-- adding  role="navigation" in order to read the aria-label -->
+    <nav aria-label="Main Menu"  role="navigation">
+      <h1><a href="/">Restaurant Reviews</a></h1>
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <!-- https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html -->
+    <nav aria-label="Breadcrumb"  role="navigation" class="breadcrumb-nav">
+      <ul id="breadcrumb" >
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
+    <a href="#skip-map" class="skip-map">Skip Map</a>
+  </header>
+  <!-- End header -->
+
+  <!-- Beginning main -->
+  <main id="main-content">
+    <!-- Beginning map -->
+    <div id="header-content">
+      <section id="map-container" role="application" aria-label="Map of the restaurants">
+        <h2>Google Map</h2>
+        <div id="map"></div>
+        <button id="map-button">Click for interactive map</button>
+      </section>
+      <!-- End map -->
+      <!-- Beginning restaurant -->
+
+      <section id="restaurant-container" >
+        <h2 id="restaurant-name"></h2>
+        <img id="restaurant-img">
+        <p id="restaurant-cuisine"></p>
+        <h3>Address</h3>
+        <p id="restaurant-address"></p>
+        <h3>Opening Schedule</h3>
+        <table id="restaurant-hours"></table>
+      </section>
+      <!-- end restaurant -->
+    </div>
+    <!-- Beginning reviews -->
+    <section id="reviews-container">
+      <div id="reviews_content">
+          <ul id="reviews-list"></ul>
+      </div>
+      
+      <div id="reviews_form">
+        <h4>Add Review</h4>
+        <p id="validation-error">Please enter all the data correctly</p>
+        <form class="form" method="POST" id="review_form">
+          <div>
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name"  required/>
+          </div>
+          <div>
+              <label for="rate">Rate</label>
+              <select id="rate" name="select" required>
+                <option value="5">5 stars</option>
+                <option value="4">4 stars</option>
+                <option value="3">3 stars</option>
+                <option value="2">2 stars</option>
+                <option value="1">1 star</option>
+            </select>
+          </div>
+          <div>
+              <label for="comment">Comment</label>
+              <textarea id="comment"  name="comment" required></textarea>
+          </div>
+          <input id="submit" type="submit" name="submit" value="Add Review">
+        </form>
+      </div>
+      
+    </section>
+
+    <!-- End reviews -->
+  </main>
+  <!-- End main -->
+
+  <!-- Beginning footer -->
+  <footer id="footer" >
+    <div  id="skip-map" tabindex="-1">Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.</div>
+  </footer>
+  <!-- End footer -->
+  <script src="js/restaurant_bundle.js"></script>
+  <!-- Google Maps -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoChqwzBlFzWs0zw9QYGX-3DugvL-Zg-c&libraries=places&callback=initMap"></script>
+  <!-- End scripts -->
+
+</body>
+
+</html>
